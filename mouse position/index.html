@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language ="JavaScript" type= "text/javascript">
+
+        function WhereMouse( evt ){
+        
+     /*c'est pour dire que evt est = a event*/  evt = !evt ? event : evt
+        
+    /*c'est pour défénir Mouse_X en récuperant le evenement de ClientX*/    var Mouse_X = evt.clientX; 
+    /*c'est pour défénir Mouse_Y en récuperant le evenement de ClientY*/    var Mouse_Y = evt.clientY;
+        
+    /*permet de récupéré la position de x quand on scroll*/    var scroll_x=document.body.scrollLeft || document.documentElement.scrollLeft;
+    /*permet de récupéré la position de y quand on scroll*/var scroll_y=document.body.scrollTop || document.documentElement.scrollTop;
+        
+    /*mouse_X est égal à scroll_x*/    Mouse_X += scroll_x;
+    /*mouse_Y est égal à scroll_y*/     Mouse_Y += scroll_y;
+        
+    /*permet d'afficher dans l'input avec l'id imp1 que c'est egal à mouse_X*/     document.getElementById('imp1').value=Mouse_X
+    /*permet d'afficher dans l'input avec l'id imp2 que c'est egal à mouse_Y*/    document.getElementById('imp2').value=Mouse_Y
+        }
+        
+        
+    /*permet de trouver ou est la souris*/     typeof window.addEventListener == 'undefined' ? document.attachEvent("onmousemove",WhereMouse) : document.addEventListener('mousemove',WhereMouse,false);
+        
+         </script>
+        </head>
+        
+        
+        <body>
+         <div style='position:fixed'></div>
+        X <input type =texte id='imp1'/>
+        <br>
+        <br>
+        Y <input type =texte id='imp2'/>
+        </div>
+        </body>
+</html>
