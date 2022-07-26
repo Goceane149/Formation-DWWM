@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+/* permet de definir la fonction clickCounter dans JS*/function clickCounter() {
+/* Si typeof(Storage) est strictement différent de undefined alors */  if (typeof(Storage) !== "undefined") {
+/* si on click sur le bon qui a fpour fonction ClickCounter  alor*/    if (sessionStorage.clickcount) {
+ /* le conteur de click du bouton est = au nombre de click +1 */     sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+    } else {
+/* sinon le conteur de click du bouton est = à 1 */     sessionStorage.clickcount = 1;
+    }
+/* permet d'interagir avec le dom est de modifié  */    document.getElementById("result").innerHTML = "Vous avez ajouter une barquette de  fraise(s).";
+  }
+  document.getElementById("total").innerHTML = "Vous avez " + sessionStorage.clickcount + " fraise(s).";
+}
+/*permet de definir la fonction clickSupprimer dans JS */function clickSuprimer() {
+  if (typeof(Storage) !== "undefined") {
+    if (sessionStorage.clickcount) {
+/*le conteur de click du bouton est = au nombre de click -1 */      sessionStorage.clickcount = Number(sessionStorage.clickcount)-1;
+    } else {
+      sessionStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = "Vous avez de supprimer  une barquette de fraise(s).";
+  }
+  document.getElementById("total").innerHTML = "Vous avez " + sessionStorage.clickcount + " fraise(s).";
+}
+</script>
+</head>
+<body>
+</script>
+</head>
+<body>
+
+<img width="10%" src="asset/image/fraise.jpg"/>
+<p> <button onclick="clickCounter()" type="button">Ajoutez!</button>
+  <button onclick="clickSuprimer()" type="button">supprimé</button>
+</p>
+<p>cliquez pour voir combien vous avez dans le panier</p>
+<div id="result"></div>
+<div id="total"></div>
+
+
+</body>
+</html>
+
