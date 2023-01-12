@@ -20,6 +20,7 @@ echo <<<html
     <tr>
     <th scope="col">prénom</th>
     <th scope="col">note</th>
+    
 html;
 
 foreach($prenom as $x => $x_value) {
