@@ -4,7 +4,9 @@ Ce repository a pour but de montrer tous les exercice effectué lors de ma forma
 
 vous pouvez retrouvez des exercice en :
 
--HTML/CSS
--JAVASCRIPT
--PHP/SQL
+-HTML/CSS.
+
+-JAVASCRIPT.
+
+-PHP/SQL.
  
